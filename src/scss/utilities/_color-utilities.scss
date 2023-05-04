@@ -1,0 +1,10 @@
+@use '../abstracts' as a;
+
+@each $color, $value in a.$colors {
+    .bg-#{$color} {
+        background-color: hsl($value);
+    }
+    .text-#{$color}{
+        color: hsl($value);
+    }
+}

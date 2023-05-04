@@ -1,0 +1,15 @@
+@use '../abstracts' as a;
+.destination {
+    background-image: url("/assets/destination/background-destination-mobile.jpg");
+
+    @include a.breakpoint(medium){
+        & {
+            background-position: center center;
+            background-image: url("/assets/destination/background-destination-tablet.jpg");
+        }
+    }
+
+    @include a.breakpoint(large){
+        background-image: url("/assets/destination/background-destination-desktop.jpg");
+    }
+}

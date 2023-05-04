@@ -1,0 +1,35 @@
+@use "../abstracts/" as a;
+
+:root {
+  @each $color, $value in a.$colors {
+    --clr-#{$color}: #{$value};
+  }
+
+  @each $screen-size, $font-sizes in a.$type-scale {
+    @if $screen-size == small {
+      @each $size, $value in $font-sizes {
+        --fs-#{$size}: #{$value};
+      }
+    }
+
+    @include a.breakpoint(medium) {
+      @if $screen-size == medium {
+        @each $size, $value in $font-sizes {
+          --fs-#{$size}: #{$value};
+        }
+      }
+    }
+
+    
+      @include a.breakpoint(large) {
+          @if $screen-size == large {
+            @each $size, $value in $font-sizes {
+              --fs-#{$size}: #{$value};
+            }
+          }
+      }
+
+  }
+
+  @include a.font-face;
+}

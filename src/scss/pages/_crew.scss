@@ -1,0 +1,14 @@
+@use '../abstracts' as a;
+
+.crew {
+    background-image: url("/assets/home/background-crew-mobile.jpg");
+
+    @include a.breakpoint(medium){
+            background-position: center center;
+            background-image: url("/assets/crew/background-crew-tablet.jpg");
+    }
+
+    @include a.breakpoint(large){
+        background-image: url("/assets/crew/background-crew-desktop.jpg");
+    }
+}

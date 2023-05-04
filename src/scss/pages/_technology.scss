@@ -1,0 +1,13 @@
+@use '../abstracts' as a;
+.technology {
+    background-image: url("/assets/technology/background-technology-mobile.jpg");
+
+    @include a.breakpoint(medium){
+        background-position: center center;
+        background-image: url("/assets/technology/background-technology-tablet.jpg");
+    }
+
+    @include a.breakpoint(large){
+        background-image: url("/assets/technology/background-technology-desktop.jpg");
+    }
+}

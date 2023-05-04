@@ -1,0 +1,212 @@
+@use "../abstracts" as a;
+
+.grid-container {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding-inline: 1rem;
+  padding-bottom: 4rem;
+
+  @include a.breakpoint(large) {
+    text-align: left;
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
+        1rem,
+        1fr
+      );
+  }
+
+  &--home {
+    @include a.breakpoint(large) {
+      padding-bottom: max(6rem, 20vh);
+      align-items: end;
+
+      & > *:first-child {
+        grid-column: 2;
+      }
+
+      & > *:last-child {
+        grid-column: 3;
+      }
+    }
+  }
+
+  & p:not([class]) {
+    max-width: 50ch;
+  }
+
+  &--destination {
+    --flow-space: 2rem;
+    grid-template-areas:
+      "title"
+      "image"
+      "tabs"
+      "content";
+
+    @include a.breakpoint(large) {
+      justify-items: start;
+      align-content: start;
+      grid-template-areas:
+        ". title title ."
+        ". image tabs ."
+        ". image content .";
+    }
+
+    & > picture {
+      grid-area: image;
+      max-width: 60%;
+      align-self: start;
+
+      @include a.breakpoint(large) {
+        max-width: 90%;
+      }
+    }
+
+    & > .tab-list {
+      grid-area: tabs;
+    }
+
+    & > .destination-info {
+      grid-area: content;
+    }
+  }
+
+  &--crew {
+    --flow-space: 2rem;
+    grid-template-areas:
+      "title"
+      "image"
+      "tabs"
+      "content";
+
+    & > picture {
+      grid-area: image;
+      max-width: 60%;
+      border-bottom: 1px solid hsl(var(--clr-white) / 0.1);
+    }
+
+    & > .dot-indicators {
+      grid-area: tabs;
+    }
+
+    & > .crew-info {
+      grid-area: content;
+    }
+
+    @include a.breakpoint(medium) {
+        padding-bottom: 0;
+        grid-template-areas: 
+            'title'
+            'content'
+            'tabs'
+            'image';
+      }
+  
+      @include a.breakpoint(large) {
+        grid-template-columns: minmax(1rem, 1fr) minmax(0, 40rem) minmax(0, 23rem) minmax(1rem, 1fr);
+        justify-items: start;
+        grid-template-areas: 
+            '. title title .'
+            '. content image .'
+            '. tabs image .';
+        
+        & > picture {
+            grid-column: span 2;
+            align-self: end; 
+            max-width: 90%;
+        }
+      }
+  }
+
+  &--technology {
+    padding-inline: 0;
+    --flow-space: 2rem;
+    grid-template-areas:
+      "title"
+      "image"
+      "tabs"
+      "content";
+
+    @include a.breakpoint(large) {
+      padding-inline: 0;
+      grid-template-columns: minmax(2rem, 1fr) minmax(0, 10rem) minmax(0, 40rem) minmax(
+          0,
+          30rem
+        );
+      justify-items: start;
+      grid-template-areas:
+        ". title title ."
+        ". tabs content image"
+        ". tabs content image";
+    }
+
+    & > picture {
+      grid-area: image;
+      max-width: 100%;
+
+      @include a.breakpoint(large) {
+        max-width: 90%;
+        & .image2 {
+          display: none;
+        }
+        & .image1 {
+          display: block;
+        }
+      }
+    }
+
+    & > .number-indicators {
+      grid-area: tabs;
+
+      @include a.breakpoint(large) {
+        flex-direction: column;
+      }
+    }
+
+    & > .technology-info {
+      grid-area: content;
+    }
+  }
+}
+
+.numbered-title {
+  grid-area: title;
+
+  @include a.breakpoint(medium) {
+    justify-self: start;
+    margin-top: 2rem;
+  }
+}
+
+.destination-meta {
+  flex-direction: column;
+  border-top: 1px solid hsl(var(--clr-white) / 0.1);
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+
+  & p {
+    font-size: 1.75rem;
+  }
+
+  @include a.breakpoint(medium) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  @include a.breakpoint(large) {
+    --gap: min(6vw, 6rem);
+    justify-content: start;
+  }
+}
+
+.crew-info h2 {
+  color: hsl(var(--clr-white) / 0.5);
+}
+
+.technology-info h2 {
+  color: hsl(var(--clr-white) / 0.5);
+}
+
+.image1 {
+  display: none;
+}

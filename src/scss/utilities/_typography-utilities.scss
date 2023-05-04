@@ -1,0 +1,24 @@
+@use '../abstracts' as a;
+
+@each $screen-size, $font-sizes in a.$type-scale {
+    @if $screen-size == small {
+        @each $size, $value in $font-sizes {
+            .fs-#{$size} {
+                font-size: var(--fs-#{$size});
+                @if $size > 500 {
+                        line-height: 1.1;
+                }
+            }
+        }
+    }
+}
+
+.ff-serif { font-family: var(--ff-serif); } 
+.ff-sans-cond { font-family: var(--ff-sans-cond); } 
+.ff-sans-normal { font-family: var(--ff-sans-normal); } 
+
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
+
+.uppercase { text-transform: uppercase; }

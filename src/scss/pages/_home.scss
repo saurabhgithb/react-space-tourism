@@ -1,0 +1,18 @@
+@use '../abstracts' as a;
+.home {
+    min-height: 100vh;
+    background-image: url("/assets/home/background-home-mobile.jpg");
+
+    @include a.breakpoint(medium){
+        background-position: center center;
+        background-image: url("/assets/home/background-home-tablet.jpg");
+    }
+
+    @include a.breakpoint(large){
+        background-image: url("/assets/home/background-home-desktop.jpg");
+    }
+
+    .numbered-title {
+        grid-area: title;
+    }
+}

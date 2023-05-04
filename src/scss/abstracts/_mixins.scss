@@ -1,0 +1,21 @@
+@use 'breakpoints' as b;
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get(b.$breakpoint-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get(b.$breakpoint-down, $size)) {
+    @content;
+  }
+}
+
+@mixin font-face {
+  --ff-serif: "Bellefair", serif;
+  --ff-sans-cond: "Barlow Condensed", sans-serif;
+  --ff-sans-normal: "Barlow", sans-serif;
+}
+
+
