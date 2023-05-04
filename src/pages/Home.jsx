@@ -21,7 +21,7 @@ const Home = () => {
           </p>
         </div>
         <div>
-          <Link to="/destination" className="large-button bg-white text-dark ff-serif letter-spacing-3 uppercase">
+          <Link to="/react-space-tourism/destination" className="large-button bg-white text-dark ff-serif letter-spacing-3 uppercase">
           Explore
           </Link>
         </div>

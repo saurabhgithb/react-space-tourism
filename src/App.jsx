@@ -13,11 +13,11 @@ function App() {
       </a>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/destination" element={<Destination />} />
-          <Route path="/crew" element={<Crew />} />
-          <Route path="/technology" element={<Technology />} />
-          <Route path="/design-system" element={<DesignSystem />} />
+          <Route path="/react-space-tourism/" element={<Home />} />
+          <Route path="/react-space-tourism/destination" element={<Destination />} />
+          <Route path="/react-space-tourism/crew" element={<Crew />} />
+          <Route path="/react-space-tourism/technology" element={<Technology />} />
+          <Route path="/react-space-tourism/design-system" element={<DesignSystem />} />
         </Routes>
       </Router>
     </>

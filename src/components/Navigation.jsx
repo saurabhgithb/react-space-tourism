@@ -9,7 +9,7 @@ const Navigation = () => {
     <header className="primary-header flex">
       <div>
         <img
-          src="/assets/shared/logo.svg"
+          src="/react-space-tourism/assets/shared/logo.svg"
           alt="space tourism brand icon"
           className="logo"
         />
@@ -33,44 +33,44 @@ const Navigation = () => {
           className="primary-navigation underline-indicators flex"
         >
           <Link
-            to="/"
-            className={`${location.pathname == "/" ? "active" : ""} uppercase text-white letter-spacing-2 ff-sans-cond fs-300`}
+            to="/react-space-tourism/"
+            className={`${location.pathname == "/react-space-tourism/" ? "active" : ""} uppercase text-white letter-spacing-2 ff-sans-cond fs-300`}
           >
             <li
-              aria-selected={location.pathname == "/" ? "true" : "false"}
+              aria-selected={location.pathname == "/react-space-tourism/" ? "true" : "false"}
             >
               <span aria-hidden="true"> 00</span>Home
             </li>
           </Link>
           <Link
-            to="/destination"
-            className={`${location.pathname == "/destination" ? "active" : ""} uppercase text-white letter-spacing-2 ff-sans-cond fs-300`}
+            to="/react-space-tourism/destination"
+            className={`${location.pathname == "/react-space-tourism/destination" ? "active" : ""} uppercase text-white letter-spacing-2 ff-sans-cond fs-300`}
           >
             <li
               aria-selected={
-                location.pathname == "/destination" ? "true" : "false"
+                location.pathname == "/react-space-tourism/destination" ? "true" : "false"
               }
             >
               <span aria-hidden="true">01</span>Destination
             </li>
           </Link>
           <Link
-            to="/crew"
-            className={`${location.pathname == "/crew" ? "active" : ""} uppercase text-white letter-spacing-2 ff-sans-cond fs-300`}
+            to="/react-space-tourism/crew"
+            className={`${location.pathname == "/react-space-tourism/crew" ? "active" : ""} uppercase text-white letter-spacing-2 ff-sans-cond fs-300`}
           >
             <li
-              aria-selected={location.pathname == "/crew" ? "true" : "false"}
+              aria-selected={location.pathname == "/react-space-tourism/crew" ? "true" : "false"}
             >
               <span aria-hidden="true">02</span>Crew
             </li>
           </Link>
           <Link
-            to="/technology"
-            className={`${location.pathname == "/technology" ? "active" : ""} uppercase text-white letter-spacing-2 ff-sans-cond fs-300`}
+            to="/react-space-tourism/technology"
+            className={`${location.pathname == "/react-space-tourism/technology" ? "active" : ""} uppercase text-white letter-spacing-2 ff-sans-cond fs-300`}
           >
             <li
               aria-selected={
-                location.pathname == "/technology" ? "true" : "false"
+                location.pathname == "/react-space-tourism/technology" ? "true" : "false"
               }
             >
               <span aria-hidden="true">03</span>Technology
